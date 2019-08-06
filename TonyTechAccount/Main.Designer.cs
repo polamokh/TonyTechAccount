@@ -65,6 +65,7 @@
             this.buttonNewAccount.TabIndex = 0;
             this.buttonNewAccount.Text = "New Account";
             this.buttonNewAccount.UseVisualStyleBackColor = true;
+            this.buttonNewAccount.Click += new System.EventHandler(this.buttonNewAccount_Click);
             // 
             // buttonPrint
             // 
@@ -107,6 +108,8 @@
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
