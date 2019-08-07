@@ -16,17 +16,21 @@ namespace TonyTechAccount
         private int bD_Year;
         private string email;
         private string password;
+        private string type;
+        private string created_On;
 
-        public Account(string firstName, string lastName, string mobileNumber, int bD_Day, int bD_Month, int bD_Year, string email, string password)
+        public Account(string firstName, string lastName, string mobileNumber, int bD_Day, int bD_Month, int bD_Year, string email, string password, string type, string created_On)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.mobileNumber = mobileNumber;
-            this.bD_Day = bD_Day;
-            this.bD_Month = bD_Month;
-            this.bD_Year = bD_Year;
-            this.email = email;
-            this.password = password;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.MobileNumber = mobileNumber;
+            this.BD_Day = bD_Day;
+            this.BD_Month = bD_Month;
+            this.BD_Year = bD_Year;
+            this.Email = email;
+            this.Password = password;
+            this.Type = type;
+            this.Created_On = created_On;
         }
 
         public string FirstName { get => firstName; set => firstName = value; }
@@ -37,5 +41,7 @@ namespace TonyTechAccount
         public int BD_Year { get => bD_Year; set => bD_Year = value; }
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
+        public string Type { get => type; set => type = value; }
+        public string Created_On { get => created_On; set => created_On = value; }
     }
 }
