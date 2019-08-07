@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace TonyTechAccount
 {
@@ -14,17 +15,30 @@ namespace TonyTechAccount
             return email.ToLower() + "@" + type.ToLower() + ".com";
         }
 
-        public static void NewAccount(string type, Account account, SqlConnection connection)
+        /// <summary>
+        /// Add new account in database.
+        /// </summary>
+        /// <param name="type">Account Type</param>
+        /// <param name="account">Account Details</param>
+        /// <param name="connection">Database Connection</param>
+        public static void NewAccount(Account account, SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             string commandText = string.Format("INSERT INTO Account VALUES(" +
-                "'{0}', '{1}', '{2}', '{3}', {4}, {5}, {6}, '{7}', '{8}')",
-                ConstructEmail(account.Email, type), account.FirstName, account.LastName,
+                "'{0}', '{1}', '{2}', '{3}', {4}, {5}, {6}, '{7}', '{8}', '{9}')",
+                ConstructEmail(account.Email, account.Type), account.FirstName, account.LastName,
                 account.MobileNumber, account.BD_Day, account.BD_Month, account.BD_Year,
-                account.Password, type);
+                account.Password, account.Type, account.Created_On);
 
             adapter.InsertCommand = new SqlCommand(commandText, connection);
-            adapter.InsertCommand.ExecuteNonQuery();
+            try
+            {
+                adapter.InsertCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public static void CreateSqlDatabase(string filename)
@@ -60,10 +74,19 @@ namespace TonyTechAccount
                 "[BD_Year]      NUMERIC (4)   NOT NULL," +
                 "[Acc_Password] VARCHAR (256) NOT NULL," +
                 "[Acc_Type]     VARCHAR (256) NOT NULL," +
+                "[Created_On] DATE NOT NULL," +
                 "PRIMARY KEY CLUSTERED ([Email] ASC)" +
                 ");";
             adapter.InsertCommand = new SqlCommand(commandText, connection);
             adapter.InsertCommand.ExecuteNonQuery();
+        }
+
+        public static void ClearTextboxes(TextBox[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                args[i].Text = "";
+            }
         }
     }
 }
