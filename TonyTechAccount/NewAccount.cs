@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TonyTechAccount
 {
     public partial class NewAccount : Form
     {
         public static Form mainForm;
-        public NewAccount(Form form)
+        public static SqlConnection connection;
+
+        public NewAccount(Form form, SqlConnection conn)
         {
             InitializeComponent();
             mainForm = form;
+            connection = conn;
         }
 
         private void NewAccount_FormClosed(object sender, FormClosedEventArgs e)
@@ -38,6 +42,25 @@ namespace TonyTechAccount
                 textBoxBDYear, textBoxEmail, textBoxPassword, textBoxCreatedOn};
             API.ClearTextboxes(args);
             this.Hide();
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            TextBox[] args = {textBoxFName, textBoxLName, textBoxBDDay, textBoxBDMonth,
+                textBoxBDYear, textBoxEmail, textBoxPassword, textBoxCreatedOn};
+            if (API.CheckTextboxes(args))
+            {
+                if (!(textBoxEmail.Text.Contains("@") || textBoxEmail.Text.Contains(".com")))
+                    API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
+                    int.Parse(textBoxBDDay.Text), int.Parse(textBoxBDMonth.Text), int.Parse(textBoxBDYear.Text),
+                    textBoxEmail.Text, textBoxPassword.Text, comboBoxType.Text, textBoxCreatedOn.Text), connection);
+                else
+                    MessageBox.Show("Please remove \"@\" or \".com\" from Email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all account details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

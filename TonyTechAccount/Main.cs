@@ -47,9 +47,14 @@ namespace TonyTechAccount
 
         private void buttonNewAccount_Click(object sender, EventArgs e)
         {
-            NewAccount newAccountForm = new NewAccount(this);
+            NewAccount newAccountForm = new NewAccount(this, connection);
             newAccountForm.Show();
             this.Hide();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

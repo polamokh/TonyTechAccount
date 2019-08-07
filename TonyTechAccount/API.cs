@@ -38,7 +38,10 @@ namespace TonyTechAccount
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            MessageBox.Show("The account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void CreateSqlDatabase(string filename)
@@ -87,6 +90,16 @@ namespace TonyTechAccount
             {
                 args[i].Text = "";
             }
+        }
+
+        public static bool CheckTextboxes(TextBox[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].Text == "")
+                    return false;
+            }
+            return true;
         }
     }
 }
