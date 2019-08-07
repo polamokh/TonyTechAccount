@@ -47,7 +47,9 @@ namespace TonyTechAccount
 
         private void buttonNewAccount_Click(object sender, EventArgs e)
         {
-
+            NewAccount newAccountForm = new NewAccount(this);
+            newAccountForm.Show();
+            this.Hide();
         }
     }
 }
