@@ -50,12 +50,9 @@ namespace TonyTechAccount
                 textBoxBDYear, textBoxEmail, textBoxPassword, textBoxCreatedOn};
             if (API.CheckTextboxes(args))
             {
-                if (!(textBoxEmail.Text.Contains("@") || textBoxEmail.Text.Contains(".com")))
-                    API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
+                API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
                     int.Parse(textBoxBDDay.Text), int.Parse(textBoxBDMonth.Text), int.Parse(textBoxBDYear.Text),
                     textBoxEmail.Text, textBoxPassword.Text, comboBoxType.Text, textBoxCreatedOn.Text), connection);
-                else
-                    MessageBox.Show("Please remove \"@\" or \".com\" from Email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

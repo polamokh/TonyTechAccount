@@ -129,9 +129,9 @@
             this.label8.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(282, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(272, 16);
+            this.label8.Size = new System.Drawing.Size(44, 16);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Email (W/O \"@gmail.com\" or \"@icloud.com\")";
+            this.label8.Text = "Email";
             // 
             // label7
             // 

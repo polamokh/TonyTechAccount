@@ -10,11 +10,6 @@ namespace TonyTechAccount
 {
     class API
     {
-        public static string ConstructEmail(string email, string type)
-        {
-            return email.ToLower() + "@" + type.ToLower() + ".com";
-        }
-
         /// <summary>
         /// Add new account in database.
         /// </summary>
@@ -26,7 +21,7 @@ namespace TonyTechAccount
             SqlDataAdapter adapter = new SqlDataAdapter();
             string commandText = string.Format("INSERT INTO Account VALUES(" +
                 "'{0}', '{1}', '{2}', '{3}', {4}, {5}, {6}, '{7}', '{8}', '{9}')",
-                ConstructEmail(account.Email, account.Type), account.FirstName, account.LastName,
+                account.Email, account.FirstName, account.LastName,
                 account.MobileNumber, account.BD_Day, account.BD_Month, account.BD_Year,
                 account.Password, account.Type, account.Created_On);
 
@@ -78,7 +73,7 @@ namespace TonyTechAccount
                 "[Acc_Password] VARCHAR (256) NOT NULL," +
                 "[Acc_Type]     VARCHAR (256) NOT NULL," +
                 "[Created_On] DATE NOT NULL," +
-                "PRIMARY KEY CLUSTERED ([Email] ASC)" +
+                "PRIMARY KEY CLUSTERED ([Email], [Acc_Type])" +
                 ");";
             adapter.InsertCommand = new SqlCommand(commandText, connection);
             adapter.InsertCommand.ExecuteNonQuery();
