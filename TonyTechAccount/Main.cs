@@ -40,21 +40,17 @@ namespace TonyTechAccount
                 API.CreateTables(connection);
         }
 
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            connection.Dispose();
-        }
-
-        private void buttonNewAccount_Click(object sender, EventArgs e)
-        {
-            NewAccount newAccountForm = new NewAccount(this, connection);
-            newAccountForm.Show();
-            this.Hide();
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            connection.Dispose();
             Application.Exit();
+        }
+
+        private void buttonAccounts_Click(object sender, EventArgs e)
+        {
+            Accounts accountsForm = new Accounts(this, connection);
+            accountsForm.Show();
+            this.Hide();
         }
     }
 }

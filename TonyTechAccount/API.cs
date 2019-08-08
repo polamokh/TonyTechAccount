@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace TonyTechAccount
 {
@@ -88,6 +89,70 @@ namespace TonyTechAccount
             {
                 if (args[i].Text == "")
                     return false;
+            }
+            return true;
+        }
+
+        public static DataSet GetData(SqlConnection connection, string searchType = "", string searchText = "")
+        {
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string commandText = "";
+
+            if (searchText == "")
+                commandText = string.Format("SELECT * FROM Account");
+            else
+            {
+                if (searchType == "Type")
+                    commandText = string.Format("SELECT * FROM Account WHERE Acc_Type like '%{0}%'", searchText);
+                else if (searchType == "First Name")
+                    commandText = string.Format("SELECT * FROM Account WHERE FName like '%{0}%'", searchText);
+                else if (searchType == "Last Name")
+                    commandText = string.Format("SELECT * FROM Account WHERE LName like '%{0}%'", searchText);
+                else if (searchType == "Mobile Number")
+                    commandText = string.Format("SELECT * FROM Account WHERE MobileNumber like '%{0}%'", searchText);
+                else if (searchType == "Email")
+                    commandText = string.Format("SELECT * FROM Account WHERE Email like '%{0}%'", searchText);
+                else if (searchType == "Created On")
+                    try
+                    {
+                        commandText = string.Format("SELECT * FROM Account WHERE Created_On = '{0}'",
+                            DateTime.Parse(searchText));
+                    }
+                    catch (Exception)
+                    {
+                        commandText = string.Format("SELECT * FROM Account");
+                    }
+            }
+
+            adapter.SelectCommand = new SqlCommand(commandText, connection);
+            adapter.Fill(dataSet);
+
+            return dataSet;
+        }
+
+        public static bool DeleteAccount(string email, string type, SqlConnection connection)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string commandText = string.Format("DELETE Account WHERE Email = '{0}' AND Acc_Type = '{1}'",
+                email, type);
+
+            adapter.InsertCommand = new SqlCommand(commandText, connection);
+            DialogResult result = MessageBox.Show("Are you sure that you want to delete this account?", "Ask",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                try
+                {
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("The account deleted successfully!", "Success", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             return true;
         }

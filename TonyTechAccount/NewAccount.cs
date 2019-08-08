@@ -13,20 +13,14 @@ namespace TonyTechAccount
 {
     public partial class NewAccount : Form
     {
-        public static Form mainForm;
-        public static SqlConnection connection;
+        private static Form calledByForm;
+        private static SqlConnection connection;
 
         public NewAccount(Form form, SqlConnection conn)
         {
             InitializeComponent();
-            mainForm = form;
+            calledByForm = form;
             connection = conn;
-        }
-
-        private void NewAccount_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            mainForm.Show();
-            this.Hide();
         }
 
         private void NewAccount_Load(object sender, EventArgs e)
@@ -37,7 +31,8 @@ namespace TonyTechAccount
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            mainForm.Show();
+            calledByForm.Show();
+            calledByForm.Controls[0].Controls[0].Controls[0].Controls["textBoxSearchText"].Focus();
             TextBox[] args = {textBoxFName, textBoxLName, textBoxMobile, textBoxBDDay, textBoxBDMonth,
                 textBoxBDYear, textBoxEmail, textBoxPassword};
             API.ClearTextboxes(args);

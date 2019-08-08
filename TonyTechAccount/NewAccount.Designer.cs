@@ -320,6 +320,7 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,6 +334,7 @@
             // 
             // buttonCreate
             // 
+            this.buttonCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,7 +356,6 @@
             this.Name = "NewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewAccount";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewAccount_FormClosed);
             this.Load += new System.EventHandler(this.NewAccount_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.groupBoxAccount.ResumeLayout(false);
