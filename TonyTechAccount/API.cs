@@ -157,22 +157,5 @@ namespace TonyTechAccount
             }
             return true;
         }
-
-        public static bool BackupDatabase(string desPath)
-        {
-            string databasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                "su2VzkzdyUYWzVYs.mdf");
-
-            try
-            {
-                File.Copy(databasePath, desPath, true);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
     }
 }

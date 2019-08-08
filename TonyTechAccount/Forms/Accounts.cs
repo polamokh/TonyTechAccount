@@ -43,12 +43,13 @@ namespace TonyTechAccount
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(dataGridView.SelectedRows[0].Selected)
-            {
-                if (API.DeleteAccount(dataGridView.SelectedRows[0].Cells["Email"].Value.ToString(),
-                    dataGridView.SelectedRows[0].Cells["Acc_Type"].Value.ToString(), connection))
-                    textBoxSearchText.Focus();
-            }
+            if (dataGridView.Rows.Count > 0)
+                if (dataGridView.SelectedRows[0].Selected)
+                {
+                    if (API.DeleteAccount(dataGridView.SelectedRows[0].Cells["Email"].Value.ToString(),
+                        dataGridView.SelectedRows[0].Cells["Acc_Type"].Value.ToString(), connection))
+                        textBoxSearchText.Focus();
+                }
         }
 
         private void textBoxSearchText_Enter(object sender, EventArgs e)
