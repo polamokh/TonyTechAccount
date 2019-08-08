@@ -26,7 +26,7 @@ namespace TonyTechAccount
         private void NewAccount_Load(object sender, EventArgs e)
         {
             var date = DateTime.Now.Date;
-            textBoxCreatedOn.Text = string.Format("{0}/{1}/{2}", date.Month, date.Day, date.Year);
+            textBoxCreatedOn.Text = string.Format("{0}/{1}/{2}", date.Day, date.Month, date.Year);
             comboBoxType.SelectedIndex = 0;
         }
 

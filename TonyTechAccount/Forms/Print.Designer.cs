@@ -35,18 +35,18 @@
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxAccounts = new System.Windows.Forms.GroupBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelTop = new System.Windows.Forms.TableLayoutPanel();
             this.radioButtonIndividualAccount = new System.Windows.Forms.RadioButton();
             this.radioButtonMultiAccount = new System.Windows.Forms.RadioButton();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.groupBoxAccounts = new System.Windows.Forms.GroupBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.groupBoxAccounts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanelRight.SuspendLayout();
             this.tableLayoutPanelTop.SuspendLayout();
+            this.groupBoxAccounts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPrintPreview
@@ -122,9 +122,9 @@
             this.tableLayoutPanelMain.ColumnCount = 2;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanelMain.Controls.Add(this.groupBoxAccounts, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelRight, 1, 1);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelTop, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.groupBoxAccounts, 0, 1);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -133,35 +133,6 @@
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(791, 407);
             this.tableLayoutPanelMain.TabIndex = 4;
-            // 
-            // groupBoxAccounts
-            // 
-            this.groupBoxAccounts.Controls.Add(this.dataGridView);
-            this.groupBoxAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxAccounts.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAccounts.Location = new System.Drawing.Point(3, 33);
-            this.groupBoxAccounts.Name = "groupBoxAccounts";
-            this.groupBoxAccounts.Size = new System.Drawing.Size(666, 371);
-            this.groupBoxAccounts.TabIndex = 1;
-            this.groupBoxAccounts.TabStop = false;
-            this.groupBoxAccounts.Text = "Select Accounts to Print";
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(660, 349);
-            this.dataGridView.TabIndex = 6;
             // 
             // tableLayoutPanelRight
             // 
@@ -222,6 +193,35 @@
             // 
             this.printDialog.UseEXDialog = true;
             // 
+            // groupBoxAccounts
+            // 
+            this.groupBoxAccounts.Controls.Add(this.dataGridView);
+            this.groupBoxAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxAccounts.Location = new System.Drawing.Point(3, 33);
+            this.groupBoxAccounts.Name = "groupBoxAccounts";
+            this.groupBoxAccounts.Size = new System.Drawing.Size(666, 371);
+            this.groupBoxAccounts.TabIndex = 3;
+            this.groupBoxAccounts.TabStop = false;
+            this.groupBoxAccounts.Text = "Select Row(s) to print";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(660, 352);
+            this.dataGridView.TabIndex = 5;
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,11 +235,11 @@
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Print_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
-            this.groupBoxAccounts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tableLayoutPanelRight.ResumeLayout(false);
             this.tableLayoutPanelTop.ResumeLayout(false);
             this.tableLayoutPanelTop.PerformLayout();
+            this.groupBoxAccounts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,11 +253,11 @@
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRight;
-        private System.Windows.Forms.GroupBox groupBoxAccounts;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTop;
         private System.Windows.Forms.RadioButton radioButtonIndividualAccount;
         private System.Windows.Forms.RadioButton radioButtonMultiAccount;
+        private System.Windows.Forms.GroupBox groupBoxAccounts;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

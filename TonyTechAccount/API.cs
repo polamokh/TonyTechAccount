@@ -74,7 +74,7 @@ namespace TonyTechAccount
                 "[BD_Year]      NUMERIC (4)   NOT NULL," +
                 "[Acc_Password] VARCHAR (256) NOT NULL," +
                 "[Acc_Type]     VARCHAR (256) NOT NULL," +
-                "[Created_On] DATE NOT NULL," +
+                "[Created_On]   VARCHAR(10)   NOT NULL," +
                 "PRIMARY KEY CLUSTERED ([Email], [Acc_Type])" +
                 ");";
             adapter.InsertCommand = new SqlCommand(commandText, connection);
@@ -123,15 +123,7 @@ namespace TonyTechAccount
                 else if (searchType == "Email")
                     commandText = string.Format("SELECT * FROM Account WHERE Email like '%{0}%'", searchText);
                 else if (searchType == "Created On")
-                    try
-                    {
-                        commandText = string.Format("SELECT * FROM Account WHERE Created_On = '{0}'",
-                            DateTime.Parse(searchText));
-                    }
-                    catch (Exception)
-                    {
-                        commandText = string.Format("SELECT * FROM Account");
-                    }
+                    commandText = string.Format("SELECT * FROM Account WHERE Created_On = '{0}'", searchText);
             }
 
             adapter.SelectCommand = new SqlCommand(commandText, connection);
