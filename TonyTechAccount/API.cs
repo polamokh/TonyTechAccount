@@ -10,13 +10,7 @@ namespace TonyTechAccount
 {
     class API
     {
-        /// <summary>
-        /// Add new account in database.
-        /// </summary>
-        /// <param name="type">Account Type</param>
-        /// <param name="account">Account Details</param>
-        /// <param name="connection">Database Connection</param>
-        public static void NewAccount(Account account, SqlConnection connection)
+        public static bool NewAccount(Account account, SqlConnection connection)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             string commandText = string.Format("INSERT INTO Account VALUES(" +
@@ -33,10 +27,11 @@ namespace TonyTechAccount
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             MessageBox.Show("The account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
         }
 
         public static void CreateSqlDatabase(string filename)

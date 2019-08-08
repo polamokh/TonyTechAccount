@@ -39,7 +39,7 @@ namespace TonyTechAccount
         {
             mainForm.Show();
             TextBox[] args = {textBoxFName, textBoxLName, textBoxMobile, textBoxBDDay, textBoxBDMonth,
-                textBoxBDYear, textBoxEmail, textBoxPassword, textBoxCreatedOn};
+                textBoxBDYear, textBoxEmail, textBoxPassword};
             API.ClearTextboxes(args);
             this.Hide();
         }
@@ -47,17 +47,34 @@ namespace TonyTechAccount
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             TextBox[] args = {textBoxFName, textBoxLName, textBoxBDDay, textBoxBDMonth,
-                textBoxBDYear, textBoxEmail, textBoxPassword, textBoxCreatedOn};
+                textBoxBDYear, textBoxEmail, textBoxPassword};
             if (API.CheckTextboxes(args))
             {
-                API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
-                    int.Parse(textBoxBDDay.Text), int.Parse(textBoxBDMonth.Text), int.Parse(textBoxBDYear.Text),
-                    textBoxEmail.Text, textBoxPassword.Text, comboBoxType.Text, textBoxCreatedOn.Text), connection);
+                if (textBoxEmail.Text.Contains("@") && textBoxEmail.Text.ToLower().Contains(".com"))
+                {
+                    if (API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
+                        int.Parse(textBoxBDDay.Text), int.Parse(textBoxBDMonth.Text), int.Parse(textBoxBDYear.Text),
+                        textBoxEmail.Text, textBoxPassword.Text, comboBoxType.Text, textBoxCreatedOn.Text), connection))
+                    {
+                        API.ClearTextboxes(args);
+                        textBoxMobile.Text = "";
+                    }
+                }
+                else
+                    MessageBox.Show("Please enter a vaild email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 MessageBox.Show("Please fill all account details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!(textBoxEmail.Text.Contains("@") && textBoxEmail.Text.ToLower().Contains(".com")))
+                textBoxEmail.ForeColor = Color.Red;
+            else
+                textBoxEmail.ForeColor = SystemColors.WindowText;
         }
     }
 }

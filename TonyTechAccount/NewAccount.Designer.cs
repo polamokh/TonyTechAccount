@@ -96,6 +96,7 @@
             this.groupBoxAccount.Controls.Add(this.textBoxFName);
             this.groupBoxAccount.Controls.Add(this.comboBoxType);
             this.groupBoxAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxAccount.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAccount.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAccount.Name = "groupBoxAccount";
             this.groupBoxAccount.Size = new System.Drawing.Size(561, 250);
@@ -230,6 +231,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(269, 23);
             this.textBoxEmail.TabIndex = 7;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // textBoxBDYear
             // 
