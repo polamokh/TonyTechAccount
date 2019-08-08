@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonAccounts = new System.Windows.Forms.Button();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,29 +52,15 @@
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(339, 246);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(3, 165);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(333, 78);
-            this.buttonExit.TabIndex = 4;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // buttonPrint
             // 
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(3, 84);
+            this.buttonPrint.Location = new System.Drawing.Point(3, 85);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(333, 75);
+            this.buttonPrint.Size = new System.Drawing.Size(333, 76);
             this.buttonPrint.TabIndex = 1;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = true;
@@ -88,11 +73,25 @@
             this.buttonAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAccounts.Location = new System.Drawing.Point(3, 3);
             this.buttonAccounts.Name = "buttonAccounts";
-            this.buttonAccounts.Size = new System.Drawing.Size(333, 75);
+            this.buttonAccounts.Size = new System.Drawing.Size(333, 76);
             this.buttonAccounts.TabIndex = 0;
             this.buttonAccounts.Text = "Accounts";
             this.buttonAccounts.UseVisualStyleBackColor = true;
             this.buttonAccounts.Click += new System.EventHandler(this.buttonAccounts_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(3, 167);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(333, 76);
+            this.buttonExit.TabIndex = 4;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // Main
             // 
@@ -116,6 +115,5 @@
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonAccounts;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
