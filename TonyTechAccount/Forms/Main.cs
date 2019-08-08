@@ -13,7 +13,7 @@ namespace TonyTechAccount
 {
     public partial class Main : Form
     {
-        public static string databasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+        public static string databasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
             "su2VzkzdyUYWzVYs.mdf");
 
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
@@ -51,6 +51,20 @@ namespace TonyTechAccount
             Accounts accountsForm = new Accounts(this, connection);
             accountsForm.Show();
             this.Hide();
+        }
+
+        private void buttonBackupDatabase_Click(object sender, EventArgs e)
+        {
+            DialogResult result = folderBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                connection.Dispose();
+                string temp = buttonBackupDatabase.Text;
+                buttonBackupDatabase.Text = "Please wait...";
+                API.BackupDatabase(folderBrowserDialog.SelectedPath);
+                buttonBackupDatabase.Text = temp;
+            }
+            folderBrowserDialog.Reset();
         }
     }
 }

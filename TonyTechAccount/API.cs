@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
 
 namespace TonyTechAccount
 {
@@ -153,6 +154,23 @@ namespace TonyTechAccount
                     MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
+            }
+            return true;
+        }
+
+        public static bool BackupDatabase(string desPath)
+        {
+            string databasePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                "su2VzkzdyUYWzVYs.mdf");
+
+            try
+            {
+                File.Copy(databasePath, desPath, true);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, e.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             return true;
         }

@@ -34,6 +34,7 @@
             this.buttonBackupDatabase = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonAccounts = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.tableLayoutPanelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@
             this.buttonBackupDatabase.TabIndex = 2;
             this.buttonBackupDatabase.Text = "Backup Database";
             this.buttonBackupDatabase.UseVisualStyleBackColor = true;
+            this.buttonBackupDatabase.Click += new System.EventHandler(this.buttonBackupDatabase_Click);
             // 
             // buttonPrint
             // 
@@ -149,5 +151,6 @@
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonAccounts;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
