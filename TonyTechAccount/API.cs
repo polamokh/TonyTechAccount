@@ -141,7 +141,7 @@ namespace TonyTechAccount
             adapter.InsertCommand = new SqlCommand(commandText, connection);
             DialogResult result = MessageBox.Show("Are you sure that you want to delete this account?", "Ask",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 try
                 {
@@ -156,6 +156,18 @@ namespace TonyTechAccount
                 }
             }
             return true;
+        }
+
+        public static List<string> ExtractDataToPrint(DataSet dataSet)
+        {
+            List<string> data = new List<string>();
+            data.Add(dataSet.Tables[0].Rows[0]["FName"].ToString() + ' ' + dataSet.Tables[0].Rows[0]["LName"].ToString());
+            data.Add(dataSet.Tables[0].Rows[0]["Email"].ToString());
+            data.Add(dataSet.Tables[0].Rows[0]["Acc_Password"].ToString());
+            data.Add(dataSet.Tables[0].Rows[0]["BD_Day"].ToString() + '/' + dataSet.Tables[0].Rows[0]["BD_Month"].ToString() +
+                '/' + dataSet.Tables[0].Rows[0]["BD_Year"].ToString());
+
+            return data;
         }
     }
 }

@@ -64,6 +64,7 @@
             this.buttonPrint.TabIndex = 1;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonAccounts
             // 

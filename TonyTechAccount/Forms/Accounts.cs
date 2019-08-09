@@ -25,15 +25,15 @@ namespace TonyTechAccount
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            calledByForm.Show();
             this.Close();
+            calledByForm.Visible = true;
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
             NewAccount newAccountForm = new NewAccount(this, connection);
-            newAccountForm.Show();
-            this.Hide();
+            this.Visible = false;
+            newAccountForm.Visible = true;
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
