@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Custom-Icon-Design-Mono-General-2-Document.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -146,6 +149,7 @@
     <None Include="Resources\plus-black-symbol.png" />
     <None Include="Resources\magnifying-glass.png" />
     <None Include="Resources\correct-symbol.png" />
+    <Content Include="Custom-Icon-Design-Mono-General-2-Document.ico" />
     <Content Include="Resources\gmail_logo.png" />
     <None Include="Resources\group-profile-users.png" />
     <Content Include="Resources\icloud_logo.png" />
