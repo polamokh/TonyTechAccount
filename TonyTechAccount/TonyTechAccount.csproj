@@ -140,7 +140,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\sign-out-option.png" />
+    <None Include="Resources\remove-symbol.png" />
+    <None Include="Resources\printing-tool.png" />
+    <None Include="Resources\plus-black-symbol.png" />
+    <None Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\correct-symbol.png" />
     <Content Include="Resources\gmail_logo.png" />
+    <None Include="Resources\group-profile-users.png" />
     <Content Include="Resources\icloud_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

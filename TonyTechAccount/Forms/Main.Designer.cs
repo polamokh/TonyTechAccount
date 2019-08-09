@@ -54,6 +54,8 @@
             // 
             // buttonPrint
             // 
+            this.buttonPrint.BackgroundImage = global::TonyTechAccount.Properties.Resources.printing_tool;
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -63,11 +65,14 @@
             this.buttonPrint.Size = new System.Drawing.Size(333, 76);
             this.buttonPrint.TabIndex = 1;
             this.buttonPrint.Text = "Print";
+            this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPrint.UseVisualStyleBackColor = true;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonAccounts
             // 
+            this.buttonAccounts.BackgroundImage = global::TonyTechAccount.Properties.Resources.group_profile_users;
+            this.buttonAccounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -77,11 +82,14 @@
             this.buttonAccounts.Size = new System.Drawing.Size(333, 76);
             this.buttonAccounts.TabIndex = 0;
             this.buttonAccounts.Text = "Accounts";
+            this.buttonAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAccounts.UseVisualStyleBackColor = true;
             this.buttonAccounts.Click += new System.EventHandler(this.buttonAccounts_Click);
             // 
             // buttonExit
             // 
+            this.buttonExit.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,6 +99,7 @@
             this.buttonExit.Size = new System.Drawing.Size(333, 76);
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Exit";
+            this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 

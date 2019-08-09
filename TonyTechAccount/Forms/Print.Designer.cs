@@ -46,42 +46,51 @@
             // 
             // buttonPrintPreview
             // 
+            this.buttonPrintPreview.BackgroundImage = global::TonyTechAccount.Properties.Resources.magnifying_glass;
+            this.buttonPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrintPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrintPreview.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPrintPreview.Location = new System.Drawing.Point(3, 3);
             this.buttonPrintPreview.Name = "buttonPrintPreview";
-            this.buttonPrintPreview.Size = new System.Drawing.Size(129, 153);
+            this.buttonPrintPreview.Size = new System.Drawing.Size(87, 171);
             this.buttonPrintPreview.TabIndex = 1;
             this.buttonPrintPreview.Text = "Print Preview";
+            this.buttonPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPrintPreview.UseVisualStyleBackColor = true;
             this.buttonPrintPreview.Click += new System.EventHandler(this.buttonPrintPreview_Click);
             // 
             // buttonPrint
             // 
+            this.buttonPrint.BackgroundImage = global::TonyTechAccount.Properties.Resources.printing_tool;
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(3, 162);
+            this.buttonPrint.Location = new System.Drawing.Point(3, 180);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(129, 153);
+            this.buttonPrint.Size = new System.Drawing.Size(87, 127);
             this.buttonPrint.TabIndex = 2;
             this.buttonPrint.Text = "Print";
+            this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPrint.UseVisualStyleBackColor = true;
             // 
             // buttonClose
             // 
+            this.buttonClose.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(3, 321);
+            this.buttonClose.Location = new System.Drawing.Point(3, 313);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(129, 90);
+            this.buttonClose.Size = new System.Drawing.Size(87, 128);
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Close";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
@@ -102,8 +111,8 @@
             // tableLayoutPanelMain
             // 
             this.tableLayoutPanelMain.ColumnCount = 2;
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelRight, 1, 0);
             this.tableLayoutPanelMain.Controls.Add(this.groupBoxAccounts, 0, 0);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,7 +120,7 @@
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 1;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(703, 420);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(657, 450);
             this.tableLayoutPanelMain.TabIndex = 4;
             // 
             // tableLayoutPanelRight
@@ -122,13 +131,13 @@
             this.tableLayoutPanelRight.Controls.Add(this.buttonClose, 0, 2);
             this.tableLayoutPanelRight.Controls.Add(this.buttonPrint, 0, 1);
             this.tableLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRight.Location = new System.Drawing.Point(565, 3);
+            this.tableLayoutPanelRight.Location = new System.Drawing.Point(561, 3);
             this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
             this.tableLayoutPanelRight.RowCount = 3;
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
-            this.tableLayoutPanelRight.Size = new System.Drawing.Size(135, 414);
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelRight.Size = new System.Drawing.Size(93, 444);
             this.tableLayoutPanelRight.TabIndex = 0;
             // 
             // groupBoxAccounts
@@ -138,7 +147,7 @@
             this.groupBoxAccounts.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAccounts.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAccounts.Name = "groupBoxAccounts";
-            this.groupBoxAccounts.Size = new System.Drawing.Size(556, 414);
+            this.groupBoxAccounts.Size = new System.Drawing.Size(552, 444);
             this.groupBoxAccounts.TabIndex = 1;
             this.groupBoxAccounts.TabStop = false;
             this.groupBoxAccounts.Text = "Select Accounts to Print";
@@ -157,14 +166,14 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(550, 392);
+            this.dataGridView.Size = new System.Drawing.Size(546, 422);
             this.dataGridView.TabIndex = 6;
             // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 420);
+            this.ClientSize = new System.Drawing.Size(657, 450);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Print";

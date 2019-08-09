@@ -36,8 +36,8 @@
             this.tableLayoutPanelFooter = new System.Windows.Forms.TableLayoutPanel();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelHeader.SuspendLayout();
             this.groupBox.SuspendLayout();
@@ -56,9 +56,9 @@
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 3;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.70588F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.52941F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(659, 462);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
@@ -72,7 +72,7 @@
             this.tableLayoutPanelHeader.Name = "tableLayoutPanelHeader";
             this.tableLayoutPanelHeader.RowCount = 1;
             this.tableLayoutPanelHeader.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelHeader.Size = new System.Drawing.Size(653, 63);
+            this.tableLayoutPanelHeader.Size = new System.Drawing.Size(653, 61);
             this.tableLayoutPanelHeader.TabIndex = 0;
             // 
             // groupBox
@@ -83,7 +83,7 @@
             this.groupBox.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.Location = new System.Drawing.Point(3, 3);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(647, 57);
+            this.groupBox.Size = new System.Drawing.Size(647, 55);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Search";
@@ -120,48 +120,70 @@
             // tableLayoutPanelFooter
             // 
             this.tableLayoutPanelFooter.ColumnCount = 3;
-            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364F));
+            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.36364F));
+            this.tableLayoutPanelFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.27273F));
             this.tableLayoutPanelFooter.Controls.Add(this.buttonDelete, 0, 0);
             this.tableLayoutPanelFooter.Controls.Add(this.buttonNew, 0, 0);
             this.tableLayoutPanelFooter.Controls.Add(this.buttonClose, 2, 0);
             this.tableLayoutPanelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFooter.Location = new System.Drawing.Point(3, 418);
+            this.tableLayoutPanelFooter.Location = new System.Drawing.Point(3, 409);
             this.tableLayoutPanelFooter.Name = "tableLayoutPanelFooter";
             this.tableLayoutPanelFooter.RowCount = 1;
             this.tableLayoutPanelFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFooter.Size = new System.Drawing.Size(653, 41);
+            this.tableLayoutPanelFooter.Size = new System.Drawing.Size(653, 50);
             this.tableLayoutPanelFooter.TabIndex = 0;
             // 
             // buttonDelete
             // 
+            this.buttonDelete.BackgroundImage = global::TonyTechAccount.Properties.Resources.remove_symbol;
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(264, 3);
+            this.buttonDelete.Location = new System.Drawing.Point(240, 3);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(255, 35);
+            this.buttonDelete.Size = new System.Drawing.Size(231, 44);
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
+            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonNew
             // 
+            this.buttonNew.BackgroundImage = global::TonyTechAccount.Properties.Resources.plus_black_symbol;
+            this.buttonNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNew.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNew.Location = new System.Drawing.Point(3, 3);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(255, 35);
+            this.buttonNew.Size = new System.Drawing.Size(231, 44);
             this.buttonNew.TabIndex = 5;
             this.buttonNew.Text = "New";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Location = new System.Drawing.Point(477, 3);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(173, 44);
+            this.buttonClose.TabIndex = 9;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // dataGridView
             // 
@@ -172,28 +194,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(3, 72);
+            this.dataGridView.Location = new System.Drawing.Point(3, 70);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(653, 340);
+            this.dataGridView.Size = new System.Drawing.Size(653, 333);
             this.dataGridView.TabIndex = 4;
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(525, 3);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(125, 35);
-            this.buttonClose.TabIndex = 9;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // Accounts
             // 
