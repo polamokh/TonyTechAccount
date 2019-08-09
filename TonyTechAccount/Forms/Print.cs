@@ -30,53 +30,79 @@ namespace TonyTechAccount.Forms
 
         private void buttonPrintPreview_Click(object sender, EventArgs e)
         {
-            printPreviewDialog.Document = printDocument;
-            printPreviewDialog.ShowDialog();
+            int accountsCount = dataGridView.SelectedRows.Count;
+            if (accountsCount <= 5)
+            {
+                printPreviewDialog.Document = printDocument;
+                printPreviewDialog.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select at maximum 5 accounts to print.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             int x = 0;
-            int y = 20;
+            int y = 10;
 
-            List<string> data = API.ExtractDataToPrint(API.GetData(connection, "Email", "polamokh@gmail.com"));
+            int accountsCount = dataGridView.SelectedRows.Count;
+            for (int i = 0; i < accountsCount; i++)
+            {
+                string email = dataGridView.SelectedRows[i].Cells["Email"].Value.ToString();
+                string type = dataGridView.SelectedRows[i].Cells["Acc_Type"].Value.ToString();
 
-            Image image = Properties.Resources.gmail_logo;
-            e.Graphics.DrawImage(image, x, y, image.Width - 50, image.Height - 8);
-            y = 20 + image.Height;
+                List<string> data = API.ExtractDataToPrint(API.GetData(connection, "Email", email));
 
-            e.Graphics.DrawString("Name: ", new Font("Tahoma", 12, FontStyle.Regular),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString("Email: ", new Font("Tahoma", 12, FontStyle.Regular),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString("Password: ", new Font("Tahoma", 12, FontStyle.Regular),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString("Birthdate: ", new Font("Tahoma", 12, FontStyle.Regular),
-                Brushes.Black, new Point(x, y));
-            
-            y = 20 + image.Height;
-            x += 80;
+                Image image;
+                if (type == "Gmail")
+                    image = Properties.Resources.gmail_logo;
+                else
+                    image = Properties.Resources.icloud_logo;
 
-            e.Graphics.DrawString(data[0], new Font("Tahoma", 12, FontStyle.Bold),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString(data[1], new Font("Tahoma", 12, FontStyle.Bold),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString(data[2], new Font("Tahoma", 12, FontStyle.Bold),
-                Brushes.Black, new Point(x, y));
-            y += 25;
-            e.Graphics.DrawString(data[3], new Font("Tahoma", 12, FontStyle.Bold),
-                Brushes.Black, new Point(x, y));
-            y += 30;
+                e.Graphics.DrawImage(image, x, y, image.Width - 50, image.Height - 8);
+                y += image.Height; int yTmp = y; //Back to this point again when fill data.
 
-            x = 0;
-            e.Graphics.DrawString("PLEASE KEEP THIS PAPER IN A SAFE PLACE.", new Font("Tahoma", 12, FontStyle.Bold),
-                Brushes.Black, new Point(x, y));
-            y += 70;
+                e.Graphics.DrawString("Name: ", new Font("Tahoma", 12, FontStyle.Regular),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString("Email: ", new Font("Tahoma", 12, FontStyle.Regular),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString("Password: ", new Font("Tahoma", 12, FontStyle.Regular),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString("Birthdate: ", new Font("Tahoma", 12, FontStyle.Regular),
+                    Brushes.Black, new Point(x, y));
+
+                y = yTmp;
+                x += 80;
+
+                e.Graphics.DrawString(data[0], new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString(data[1], new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString(data[2], new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+                y += 25;
+                e.Graphics.DrawString(data[3], new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+                y += 30;
+
+                x = 0;
+                e.Graphics.DrawString("PLEASE KEEP THIS PAPER IN A SAFE PLACE.", new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+                y += 70;
+            }
+        }
+
+        private void Print_Load(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = API.GetData(connection, "", "").Tables[0];
         }
     }
 }

@@ -142,7 +142,6 @@
   <ItemGroup>
     <Content Include="Resources\gmail_logo.png" />
     <Content Include="Resources\icloud_logo.png" />
-    <None Include="Resources\Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

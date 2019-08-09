@@ -36,11 +36,6 @@ namespace TonyTechAccount
             newAccountForm.Visible = true;
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView.Rows.Count > 0)
