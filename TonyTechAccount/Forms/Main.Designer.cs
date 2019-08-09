@@ -49,7 +49,7 @@
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(339, 246);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(403, 280);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // buttonPrint
@@ -60,9 +60,9 @@
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(3, 85);
+            this.buttonPrint.Location = new System.Drawing.Point(3, 96);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(333, 76);
+            this.buttonPrint.Size = new System.Drawing.Size(397, 87);
             this.buttonPrint.TabIndex = 1;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -79,7 +79,7 @@
             this.buttonAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAccounts.Location = new System.Drawing.Point(3, 3);
             this.buttonAccounts.Name = "buttonAccounts";
-            this.buttonAccounts.Size = new System.Drawing.Size(333, 76);
+            this.buttonAccounts.Size = new System.Drawing.Size(397, 87);
             this.buttonAccounts.TabIndex = 0;
             this.buttonAccounts.Text = "Accounts";
             this.buttonAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,9 +94,9 @@
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(3, 167);
+            this.buttonExit.Location = new System.Drawing.Point(3, 189);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(333, 76);
+            this.buttonExit.Size = new System.Drawing.Size(397, 88);
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Exit";
             this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 246);
+            this.ClientSize = new System.Drawing.Size(403, 280);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";

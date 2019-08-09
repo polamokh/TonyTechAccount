@@ -45,7 +45,7 @@ namespace TonyTechAccount.Forms
 
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            int x = 0;
+            int x = 10;
             int y = 10;
 
             int accountsCount = dataGridView.SelectedRows.Count;
@@ -93,16 +93,26 @@ namespace TonyTechAccount.Forms
                     Brushes.Black, new Point(x, y));
                 y += 30;
 
-                x = 0;
+                x = 10;
                 e.Graphics.DrawString("PLEASE KEEP THIS PAPER IN A SAFE PLACE.", new Font("Tahoma", 12, FontStyle.Bold),
                     Brushes.Black, new Point(x, y));
-                y += 70;
+                y += 50;
             }
         }
 
         private void Print_Load(object sender, EventArgs e)
         {
             dataGridView.DataSource = API.GetData(connection, "", "").Tables[0];
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            DialogResult result = printDialog.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                printDocument.PrinterSettings = printDialog.PrinterSettings;
+                printDocument.Print();
+            }
         }
     }
 }

@@ -56,7 +56,7 @@ namespace TonyTechAccount
                     }
                 }
                 else
-                    MessageBox.Show("Please enter a vaild email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter a valid email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

@@ -38,6 +38,7 @@
             this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxAccounts = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelRight.SuspendLayout();
             this.groupBoxAccounts.SuspendLayout();
@@ -76,6 +77,7 @@
             this.buttonPrint.Text = "Print";
             this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonClose
             // 
@@ -169,6 +171,10 @@
             this.dataGridView.Size = new System.Drawing.Size(546, 422);
             this.dataGridView.TabIndex = 6;
             // 
+            // printDialog
+            // 
+            this.printDialog.UseEXDialog = true;
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,5 +205,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRight;
         private System.Windows.Forms.GroupBox groupBoxAccounts;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.PrintDialog printDialog;
     }
 }
