@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.IO;
+using System.Drawing;
 
 namespace TonyTechAccount
 {
@@ -168,6 +169,39 @@ namespace TonyTechAccount
                 '/' + dataSet.Tables[0].Rows[0]["BD_Year"].ToString());
 
             return data;
+        }
+
+        public static void CreatePrintLables(int x, int y, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Name: ", new Font("Tahoma", 12, FontStyle.Regular),
+                    Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString("Email: ", new Font("Tahoma", 12, FontStyle.Regular),
+                Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString("Password: ", new Font("Tahoma", 12, FontStyle.Regular),
+                Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString("Birthdate: ", new Font("Tahoma", 12, FontStyle.Regular),
+                Brushes.Black, new Point(x, y));
+            y += 30;
+            e.Graphics.DrawString("PLEASE KEEP THIS PAPER IN A SAFE PLACE.", new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+        }
+
+        public static void FillPrintData(int x, int y, List<string> data, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(data[0], new Font("Tahoma", 12, FontStyle.Bold),
+                    Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString(data[1], new Font("Tahoma", 12, FontStyle.Bold),
+                Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString(data[2], new Font("Tahoma", 12, FontStyle.Bold),
+                Brushes.Black, new Point(x, y));
+            y += 25;
+            e.Graphics.DrawString(data[3], new Font("Tahoma", 12, FontStyle.Bold),
+                Brushes.Black, new Point(x, y));
         }
     }
 }

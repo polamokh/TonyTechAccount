@@ -45,7 +45,7 @@ namespace TonyTechAccount.Forms
 
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            int x = 10;
+            int x = 220;
             int y = 10;
 
             int accountsCount = dataGridView.SelectedRows.Count;
@@ -56,63 +56,65 @@ namespace TonyTechAccount.Forms
 
                 List<string> data = API.ExtractDataToPrint(API.GetData(connection, "Email", email));
 
-                Image image;
-                if (type == "Gmail")
-                    image = Properties.Resources.gmail_logo;
+                int repeat;
+                if (radioButtonMultiAccount.Checked)
+                    repeat = 1;
                 else
-                    image = Properties.Resources.icloud_logo;
+                    repeat = 5;
 
-                e.Graphics.DrawImage(image, x, y, image.Width - 50, image.Height - 8);
-                y += image.Height; int yTmp = y; //Back to this point again when fill data.
+                for (int j = 0; j < repeat; j++)
+                {
+                    Image image;
+                    if (type == "Gmail")
+                        image = Properties.Resources.gmail_logo;
+                    else
+                        image = Properties.Resources.icloud_logo;
 
-                e.Graphics.DrawString("Name: ", new Font("Tahoma", 12, FontStyle.Regular),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString("Email: ", new Font("Tahoma", 12, FontStyle.Regular),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString("Password: ", new Font("Tahoma", 12, FontStyle.Regular),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString("Birthdate: ", new Font("Tahoma", 12, FontStyle.Regular),
-                    Brushes.Black, new Point(x, y));
+                    e.Graphics.DrawImage(image, x, y, image.Width - 50, image.Height - 8);
+                    y += image.Height; int yTmp = y; int xTmp = x; //Back to this point again when fill data.
 
-                y = yTmp;
-                x += 80;
+                    x = 240;
+                    y += 30;
+                    e.Graphics.DrawImage(Properties.Resources.tony_tech_logo, x, y, image.Width - 50, image.Height - 10);
 
-                e.Graphics.DrawString(data[0], new Font("Tahoma", 12, FontStyle.Bold),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString(data[1], new Font("Tahoma", 12, FontStyle.Bold),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString(data[2], new Font("Tahoma", 12, FontStyle.Bold),
-                    Brushes.Black, new Point(x, y));
-                y += 25;
-                e.Graphics.DrawString(data[3], new Font("Tahoma", 12, FontStyle.Bold),
-                    Brushes.Black, new Point(x, y));
-                y += 30;
+                    x = xTmp; y = yTmp;
+                    API.CreatePrintLables(x, y, e);
 
-                x = 10;
-                e.Graphics.DrawString("PLEASE KEEP THIS PAPER IN A SAFE PLACE.", new Font("Tahoma", 12, FontStyle.Bold),
-                    Brushes.Black, new Point(x, y));
-                y += 50;
+                    y = yTmp;
+                    x += 80;
+                    API.FillPrintData(x, y, data, e);
+
+                    x = 220;
+                    y += 150;
+                }
             }
         }
 
         private void Print_Load(object sender, EventArgs e)
         {
-            dataGridView.DataSource = API.GetData(connection, "", "").Tables[0];
+            dataGridView.DataSource = API.GetData(connection).Tables[0];
+            radioButtonMultiAccount.Checked = true;
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             DialogResult result = printDialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 printDocument.PrinterSettings = printDialog.PrinterSettings;
                 printDocument.Print();
             }
+        }
+
+        private void radioButtonMultiAccount_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonMultiAccount.Checked)
+                dataGridView.MultiSelect = true;
+            else
+                dataGridView.MultiSelect = false;
+
+            if (dataGridView.Rows.Count > 0)
+                dataGridView.Rows[0].Selected = true;
         }
     }
 }

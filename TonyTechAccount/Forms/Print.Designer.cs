@@ -39,10 +39,14 @@
             this.groupBoxAccounts = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.tableLayoutPanelTop = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonMultiAccount = new System.Windows.Forms.RadioButton();
+            this.radioButtonIndividualAccount = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelRight.SuspendLayout();
             this.groupBoxAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.tableLayoutPanelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonPrintPreview
@@ -55,7 +59,7 @@
             this.buttonPrintPreview.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPrintPreview.Location = new System.Drawing.Point(3, 3);
             this.buttonPrintPreview.Name = "buttonPrintPreview";
-            this.buttonPrintPreview.Size = new System.Drawing.Size(87, 171);
+            this.buttonPrintPreview.Size = new System.Drawing.Size(84, 169);
             this.buttonPrintPreview.TabIndex = 1;
             this.buttonPrintPreview.Text = "Print Preview";
             this.buttonPrintPreview.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -70,9 +74,9 @@
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(3, 180);
+            this.buttonPrint.Location = new System.Drawing.Point(3, 178);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(87, 127);
+            this.buttonPrint.Size = new System.Drawing.Size(84, 125);
             this.buttonPrint.TabIndex = 2;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -87,9 +91,9 @@
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(3, 313);
+            this.buttonClose.Location = new System.Drawing.Point(3, 309);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(87, 128);
+            this.buttonClose.Size = new System.Drawing.Size(84, 127);
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Close";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -115,14 +119,16 @@
             this.tableLayoutPanelMain.ColumnCount = 2;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelRight, 1, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.groupBoxAccounts, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.groupBoxAccounts, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelRight, 1, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelTop, 0, 0);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            this.tableLayoutPanelMain.RowCount = 1;
+            this.tableLayoutPanelMain.RowCount = 2;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(657, 450);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(639, 475);
             this.tableLayoutPanelMain.TabIndex = 4;
             // 
             // tableLayoutPanelRight
@@ -133,13 +139,13 @@
             this.tableLayoutPanelRight.Controls.Add(this.buttonClose, 0, 2);
             this.tableLayoutPanelRight.Controls.Add(this.buttonPrint, 0, 1);
             this.tableLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRight.Location = new System.Drawing.Point(561, 3);
+            this.tableLayoutPanelRight.Location = new System.Drawing.Point(546, 33);
             this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
             this.tableLayoutPanelRight.RowCount = 3;
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanelRight.Size = new System.Drawing.Size(93, 444);
+            this.tableLayoutPanelRight.Size = new System.Drawing.Size(90, 439);
             this.tableLayoutPanelRight.TabIndex = 0;
             // 
             // groupBoxAccounts
@@ -147,9 +153,9 @@
             this.groupBoxAccounts.Controls.Add(this.dataGridView);
             this.groupBoxAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAccounts.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAccounts.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxAccounts.Location = new System.Drawing.Point(3, 33);
             this.groupBoxAccounts.Name = "groupBoxAccounts";
-            this.groupBoxAccounts.Size = new System.Drawing.Size(552, 444);
+            this.groupBoxAccounts.Size = new System.Drawing.Size(537, 439);
             this.groupBoxAccounts.TabIndex = 1;
             this.groupBoxAccounts.TabStop = false;
             this.groupBoxAccounts.Text = "Select Accounts to Print";
@@ -168,18 +174,56 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(546, 422);
+            this.dataGridView.Size = new System.Drawing.Size(531, 417);
             this.dataGridView.TabIndex = 6;
             // 
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
             // 
+            // tableLayoutPanelTop
+            // 
+            this.tableLayoutPanelTop.ColumnCount = 2;
+            this.tableLayoutPanelTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelTop.Controls.Add(this.radioButtonIndividualAccount, 1, 0);
+            this.tableLayoutPanelTop.Controls.Add(this.radioButtonMultiAccount, 0, 0);
+            this.tableLayoutPanelTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelTop.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelTop.Name = "tableLayoutPanelTop";
+            this.tableLayoutPanelTop.RowCount = 1;
+            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelTop.Size = new System.Drawing.Size(537, 24);
+            this.tableLayoutPanelTop.TabIndex = 2;
+            // 
+            // radioButtonMultiAccount
+            // 
+            this.radioButtonMultiAccount.AutoSize = true;
+            this.radioButtonMultiAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonMultiAccount.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonMultiAccount.Name = "radioButtonMultiAccount";
+            this.radioButtonMultiAccount.Size = new System.Drawing.Size(262, 18);
+            this.radioButtonMultiAccount.TabIndex = 0;
+            this.radioButtonMultiAccount.Text = "Multi Account";
+            this.radioButtonMultiAccount.UseVisualStyleBackColor = true;
+            this.radioButtonMultiAccount.CheckedChanged += new System.EventHandler(this.radioButtonMultiAccount_CheckedChanged);
+            // 
+            // radioButtonIndividualAccount
+            // 
+            this.radioButtonIndividualAccount.AutoSize = true;
+            this.radioButtonIndividualAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonIndividualAccount.Location = new System.Drawing.Point(271, 3);
+            this.radioButtonIndividualAccount.Name = "radioButtonIndividualAccount";
+            this.radioButtonIndividualAccount.Size = new System.Drawing.Size(263, 18);
+            this.radioButtonIndividualAccount.TabIndex = 1;
+            this.radioButtonIndividualAccount.Text = "Individual Account (5 Times)";
+            this.radioButtonIndividualAccount.UseVisualStyleBackColor = true;
+            // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 450);
+            this.ClientSize = new System.Drawing.Size(639, 475);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -191,6 +235,8 @@
             this.tableLayoutPanelRight.ResumeLayout(false);
             this.groupBoxAccounts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.tableLayoutPanelTop.ResumeLayout(false);
+            this.tableLayoutPanelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +253,8 @@
         private System.Windows.Forms.GroupBox groupBoxAccounts;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.PrintDialog printDialog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTop;
+        private System.Windows.Forms.RadioButton radioButtonIndividualAccount;
+        private System.Windows.Forms.RadioButton radioButtonMultiAccount;
     }
 }

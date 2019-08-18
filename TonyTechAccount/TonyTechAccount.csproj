@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\tony-tech-logo.png" />
     <None Include="Resources\sign-out-option.png" />
     <None Include="Resources\remove-symbol.png" />
     <None Include="Resources\printing-tool.png" />
