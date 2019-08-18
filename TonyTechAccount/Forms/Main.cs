@@ -48,15 +48,15 @@ namespace TonyTechAccount
         private void buttonAccounts_Click(object sender, EventArgs e)
         {
             Accounts accountsForm = new Accounts(this, connection);
-            this.Visible = false;
             accountsForm.Visible = true;
+            this.Visible = false;
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             Forms.Print printForm = new Forms.Print(this, connection);
-            this.Visible = false;
             printForm.Visible = true;
+            this.Visible = false;
         }
     }
 }

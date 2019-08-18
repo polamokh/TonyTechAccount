@@ -24,8 +24,8 @@ namespace TonyTechAccount.Forms
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
             calledByForm.Visible = true;
+            this.Close();
         }
 
         private void buttonPrintPreview_Click(object sender, EventArgs e)
