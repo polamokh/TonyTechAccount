@@ -69,8 +69,8 @@
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(567, 302);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
@@ -100,7 +100,7 @@
             this.groupBoxAccount.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAccount.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAccount.Name = "groupBoxAccount";
-            this.groupBoxAccount.Size = new System.Drawing.Size(561, 245);
+            this.groupBoxAccount.Size = new System.Drawing.Size(561, 235);
             this.groupBoxAccount.TabIndex = 0;
             this.groupBoxAccount.TabStop = false;
             this.groupBoxAccount.Text = "Account Details";
@@ -312,24 +312,25 @@
             this.tableLayoutPanelFooter.Controls.Add(this.buttonCancel, 1, 0);
             this.tableLayoutPanelFooter.Controls.Add(this.buttonCreate, 0, 0);
             this.tableLayoutPanelFooter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFooter.Location = new System.Drawing.Point(3, 254);
+            this.tableLayoutPanelFooter.Location = new System.Drawing.Point(3, 244);
             this.tableLayoutPanelFooter.Name = "tableLayoutPanelFooter";
             this.tableLayoutPanelFooter.RowCount = 1;
             this.tableLayoutPanelFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFooter.Size = new System.Drawing.Size(561, 45);
+            this.tableLayoutPanelFooter.Size = new System.Drawing.Size(561, 55);
             this.tableLayoutPanelFooter.TabIndex = 1;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackgroundImage = global::TonyTechAccount.Properties.Resources.remove_symbol;
             this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Image = global::TonyTechAccount.Properties.Resources.remove_symbol;
+            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCancel.Location = new System.Drawing.Point(283, 3);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(275, 39);
+            this.buttonCancel.Size = new System.Drawing.Size(275, 49);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,15 +339,16 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.BackgroundImage = global::TonyTechAccount.Properties.Resources.correct_symbol;
             this.buttonCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreate.Image = global::TonyTechAccount.Properties.Resources.correct_symbol;
+            this.buttonCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCreate.Location = new System.Drawing.Point(3, 3);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(274, 39);
+            this.buttonCreate.Size = new System.Drawing.Size(274, 49);
             this.buttonCreate.TabIndex = 0;
             this.buttonCreate.Text = "Create";
             this.buttonCreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

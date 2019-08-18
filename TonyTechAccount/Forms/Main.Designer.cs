@@ -55,12 +55,13 @@
             // 
             // buttonPrint
             // 
-            this.buttonPrint.BackgroundImage = global::TonyTechAccount.Properties.Resources.printing_tool;
             this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrint.Image = global::TonyTechAccount.Properties.Resources.printing_tool;
+            this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonPrint.Location = new System.Drawing.Point(3, 96);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(397, 87);
@@ -72,12 +73,13 @@
             // 
             // buttonAccounts
             // 
-            this.buttonAccounts.BackgroundImage = global::TonyTechAccount.Properties.Resources.group_profile_users;
             this.buttonAccounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAccounts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAccounts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAccounts.Image = global::TonyTechAccount.Properties.Resources.group_profile_users;
+            this.buttonAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAccounts.Location = new System.Drawing.Point(3, 3);
             this.buttonAccounts.Name = "buttonAccounts";
             this.buttonAccounts.Size = new System.Drawing.Size(397, 87);
@@ -89,12 +91,13 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
             this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Image = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonExit.Location = new System.Drawing.Point(3, 189);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(397, 88);

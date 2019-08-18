@@ -137,12 +137,13 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackgroundImage = global::TonyTechAccount.Properties.Resources.remove_symbol;
             this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Image = global::TonyTechAccount.Properties.Resources.remove_symbol;
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonDelete.Location = new System.Drawing.Point(240, 3);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(231, 44);
@@ -154,12 +155,13 @@
             // 
             // buttonNew
             // 
-            this.buttonNew.BackgroundImage = global::TonyTechAccount.Properties.Resources.plus_black_symbol;
             this.buttonNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNew.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNew.Image = global::TonyTechAccount.Properties.Resources.plus_black_symbol;
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNew.Location = new System.Drawing.Point(3, 3);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(231, 44);
@@ -171,12 +173,13 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Image = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.Location = new System.Drawing.Point(477, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(173, 44);

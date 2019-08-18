@@ -35,28 +35,29 @@
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxAccounts = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelTop = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButtonMultiAccount = new System.Windows.Forms.RadioButton();
             this.radioButtonIndividualAccount = new System.Windows.Forms.RadioButton();
+            this.radioButtonMultiAccount = new System.Windows.Forms.RadioButton();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.tableLayoutPanelRight.SuspendLayout();
             this.groupBoxAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.tableLayoutPanelRight.SuspendLayout();
             this.tableLayoutPanelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonPrintPreview
             // 
-            this.buttonPrintPreview.BackgroundImage = global::TonyTechAccount.Properties.Resources.magnifying_glass;
             this.buttonPrintPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrintPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrintPreview.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrintPreview.Image = global::TonyTechAccount.Properties.Resources.magnifying_glass;
+            this.buttonPrintPreview.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonPrintPreview.Location = new System.Drawing.Point(3, 3);
             this.buttonPrintPreview.Name = "buttonPrintPreview";
             this.buttonPrintPreview.Size = new System.Drawing.Size(84, 169);
@@ -68,12 +69,13 @@
             // 
             // buttonPrint
             // 
-            this.buttonPrint.BackgroundImage = global::TonyTechAccount.Properties.Resources.printing_tool;
             this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrint.Image = global::TonyTechAccount.Properties.Resources.printing_tool;
+            this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonPrint.Location = new System.Drawing.Point(3, 178);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(84, 125);
@@ -85,12 +87,13 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.BackgroundImage = global::TonyTechAccount.Properties.Resources.sign_out_option;
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Image = global::TonyTechAccount.Properties.Resources.sign_out_option;
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonClose.Location = new System.Drawing.Point(3, 309);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(84, 127);
@@ -131,23 +134,6 @@
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(639, 475);
             this.tableLayoutPanelMain.TabIndex = 4;
             // 
-            // tableLayoutPanelRight
-            // 
-            this.tableLayoutPanelRight.ColumnCount = 1;
-            this.tableLayoutPanelRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRight.Controls.Add(this.buttonPrintPreview, 0, 0);
-            this.tableLayoutPanelRight.Controls.Add(this.buttonClose, 0, 2);
-            this.tableLayoutPanelRight.Controls.Add(this.buttonPrint, 0, 1);
-            this.tableLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRight.Location = new System.Drawing.Point(546, 33);
-            this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
-            this.tableLayoutPanelRight.RowCount = 3;
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanelRight.Size = new System.Drawing.Size(90, 439);
-            this.tableLayoutPanelRight.TabIndex = 0;
-            // 
             // groupBoxAccounts
             // 
             this.groupBoxAccounts.Controls.Add(this.dataGridView);
@@ -177,9 +163,22 @@
             this.dataGridView.Size = new System.Drawing.Size(531, 417);
             this.dataGridView.TabIndex = 6;
             // 
-            // printDialog
+            // tableLayoutPanelRight
             // 
-            this.printDialog.UseEXDialog = true;
+            this.tableLayoutPanelRight.ColumnCount = 1;
+            this.tableLayoutPanelRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRight.Controls.Add(this.buttonPrintPreview, 0, 0);
+            this.tableLayoutPanelRight.Controls.Add(this.buttonClose, 0, 2);
+            this.tableLayoutPanelRight.Controls.Add(this.buttonPrint, 0, 1);
+            this.tableLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelRight.Location = new System.Drawing.Point(546, 33);
+            this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
+            this.tableLayoutPanelRight.RowCount = 3;
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelRight.Size = new System.Drawing.Size(90, 439);
+            this.tableLayoutPanelRight.TabIndex = 0;
             // 
             // tableLayoutPanelTop
             // 
@@ -196,6 +195,17 @@
             this.tableLayoutPanelTop.Size = new System.Drawing.Size(537, 24);
             this.tableLayoutPanelTop.TabIndex = 2;
             // 
+            // radioButtonIndividualAccount
+            // 
+            this.radioButtonIndividualAccount.AutoSize = true;
+            this.radioButtonIndividualAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonIndividualAccount.Location = new System.Drawing.Point(271, 3);
+            this.radioButtonIndividualAccount.Name = "radioButtonIndividualAccount";
+            this.radioButtonIndividualAccount.Size = new System.Drawing.Size(263, 18);
+            this.radioButtonIndividualAccount.TabIndex = 1;
+            this.radioButtonIndividualAccount.Text = "Individual Account (5 Times)";
+            this.radioButtonIndividualAccount.UseVisualStyleBackColor = true;
+            // 
             // radioButtonMultiAccount
             // 
             this.radioButtonMultiAccount.AutoSize = true;
@@ -208,16 +218,9 @@
             this.radioButtonMultiAccount.UseVisualStyleBackColor = true;
             this.radioButtonMultiAccount.CheckedChanged += new System.EventHandler(this.radioButtonMultiAccount_CheckedChanged);
             // 
-            // radioButtonIndividualAccount
+            // printDialog
             // 
-            this.radioButtonIndividualAccount.AutoSize = true;
-            this.radioButtonIndividualAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonIndividualAccount.Location = new System.Drawing.Point(271, 3);
-            this.radioButtonIndividualAccount.Name = "radioButtonIndividualAccount";
-            this.radioButtonIndividualAccount.Size = new System.Drawing.Size(263, 18);
-            this.radioButtonIndividualAccount.TabIndex = 1;
-            this.radioButtonIndividualAccount.Text = "Individual Account (5 Times)";
-            this.radioButtonIndividualAccount.UseVisualStyleBackColor = true;
+            this.printDialog.UseEXDialog = true;
             // 
             // Print
             // 
@@ -232,9 +235,9 @@
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Print_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
-            this.tableLayoutPanelRight.ResumeLayout(false);
             this.groupBoxAccounts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.tableLayoutPanelRight.ResumeLayout(false);
             this.tableLayoutPanelTop.ResumeLayout(false);
             this.tableLayoutPanelTop.PerformLayout();
             this.ResumeLayout(false);
