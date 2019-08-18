@@ -34,6 +34,9 @@ namespace TonyTechAccount
             }
 
             MessageBox.Show("The account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            SqlConnection.ClearPool(connection);
+
             return true;
         }
 
@@ -59,6 +62,7 @@ namespace TonyTechAccount
 
         public static void CreateTables(SqlConnection connection)
         {
+            connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
             string commandText = "CREATE TABLE [dbo].[Account] (" +
                 "[Email]        VARCHAR (256) NOT NULL," +
@@ -75,6 +79,9 @@ namespace TonyTechAccount
                 ");";
             adapter.InsertCommand = new SqlCommand(commandText, connection);
             adapter.InsertCommand.ExecuteNonQuery();
+            connection.Dispose();
+
+            SqlConnection.ClearPool(connection);
         }
 
         public static void ClearTextboxes(TextBox[] args)
@@ -130,6 +137,8 @@ namespace TonyTechAccount
             adapter.SelectCommand = new SqlCommand(commandText, connection);
             adapter.Fill(dataSet);
 
+            SqlConnection.ClearPool(connection);
+
             return dataSet;
         }
 
@@ -156,6 +165,9 @@ namespace TonyTechAccount
                     return false;
                 }
             }
+
+            SqlConnection.ClearPool(connection);
+
             return true;
         }
 

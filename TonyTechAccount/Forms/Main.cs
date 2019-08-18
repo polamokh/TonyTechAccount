@@ -19,8 +19,6 @@ namespace TonyTechAccount
         private static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
             @"AttachDbFilename=" + databasePath + ";Integrated Security=True;Connect Timeout=30";
 
-        private static SqlConnection connection = new SqlConnection(connectionString);
-
         public Main()
         {
             InitializeComponent();
@@ -31,30 +29,27 @@ namespace TonyTechAccount
             bool isDatabaseExist = System.IO.File.Exists(databasePath);
 
             if (!isDatabaseExist)
+            {
                 API.CreateSqlDatabase(databasePath);
-
-            connection.Open();
-
-            if (!isDatabaseExist)
-                API.CreateTables(connection);
+                API.CreateTables(new SqlConnection(connectionString));
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            connection.Dispose();
             Application.Exit();
         }
 
         private void buttonAccounts_Click(object sender, EventArgs e)
         {
-            Accounts accountsForm = new Accounts(this, connection);
+            Accounts accountsForm = new Accounts(this, new SqlConnection(connectionString));
             accountsForm.Visible = true;
             this.Visible = false;
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            Forms.Print printForm = new Forms.Print(this, connection);
+            Forms.Print printForm = new Forms.Print(this, new SqlConnection(connectionString));
             printForm.Visible = true;
             this.Visible = false;
         }

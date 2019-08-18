@@ -25,6 +25,7 @@ namespace TonyTechAccount
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            connection.Dispose();
             calledByForm.Visible = true;
             this.Close();
         }
@@ -54,6 +55,7 @@ namespace TonyTechAccount
 
         private void Accounts_Load(object sender, EventArgs e)
         {
+            connection.Open();
             comboBoxSearchType.SelectedIndex = 0;
         }
 

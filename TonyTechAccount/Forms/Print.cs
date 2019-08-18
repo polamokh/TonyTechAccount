@@ -24,6 +24,7 @@ namespace TonyTechAccount.Forms
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            connection.Dispose();
             calledByForm.Visible = true;
             this.Close();
         }
@@ -92,6 +93,7 @@ namespace TonyTechAccount.Forms
 
         private void Print_Load(object sender, EventArgs e)
         {
+            connection.Open();
             dataGridView.DataSource = API.GetData(connection).Tables[0];
             radioButtonMultiAccount.Checked = true;
         }
