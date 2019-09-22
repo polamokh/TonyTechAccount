@@ -46,7 +46,7 @@ namespace TonyTechAccount
                 textBoxBDYear, textBoxEmail, textBoxPassword};
             if (API.CheckTextboxes(args))
             {
-                if (textBoxEmail.Text.Contains("@") && textBoxEmail.Text.ToLower().Contains(".com"))
+                if (textBoxEmail.Text.Contains("@") && textBoxEmail.Text.Contains("."))
                 {
                     if (API.NewAccount(new Account(textBoxFName.Text, textBoxLName.Text, textBoxMobile.Text,
                         int.Parse(textBoxBDDay.Text), int.Parse(textBoxBDMonth.Text), int.Parse(textBoxBDYear.Text),
@@ -67,7 +67,7 @@ namespace TonyTechAccount
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            if (!(textBoxEmail.Text.Contains("@") && textBoxEmail.Text.ToLower().Contains(".com")))
+            if (!(textBoxEmail.Text.Contains("@") && textBoxEmail.Text.Contains(".")))
                 textBoxEmail.ForeColor = Color.Red;
             else
                 textBoxEmail.ForeColor = SystemColors.WindowText;
